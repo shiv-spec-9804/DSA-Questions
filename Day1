@@ -1,0 +1,46 @@
+Nearest PerfectSquare Value .
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+    public static boolean isPerfectSquare(int n)
+    {
+       double sr = Math.sqrt(n);
+        return (sr - Math.floor(sr) == 0);
+    }
+    public static void getClosedNumber(int n)
+    {
+        int x=0;
+        int y=0;
+        for( int i=1; ; i++)
+        {
+            x = n-i;
+            y=n+i;
+            
+            if(isPerfectSquare(x))
+            {
+                System.out.println("x is "+x);
+                break;
+            }
+            if(isPerfectSquare(y))
+            {
+                System.out.println("y is "+y);
+                break;
+            }
+        }
+    }
+	public static void main (String[] args) {
+		//code
+		Scanner sc = new Scanner(System.in);
+		int testcases = sc.nextInt();
+		while(testcases >0)
+		{
+		    int n = sc.nextInt();
+		    getClosedNumber(n);
+		    
+		    testcases--;
+		}
+	}
+}
